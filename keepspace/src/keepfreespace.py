@@ -29,4 +29,5 @@ if __name__ == "__main__":
 	args = list(sys.argv)  # コマンドラインの引数を取得。インデックス0はスクリプトのパスなど。
 	for i in defaults[len(args)-1:]:  # 足りない引数をデフォルトから補う。
 		args.append(i)
+	args[2] = int(args[2])  # 引数は文字列で返るので整数に変換する。
 	main(*args[1:])
