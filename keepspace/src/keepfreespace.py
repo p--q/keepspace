@@ -19,7 +19,7 @@ def main(folderpath, freespacerate, disk):  # disk: 容量割合計算の分母�
 		else:  # 空き容量が確保出来ていた時はループを出る。
 			break	
 	folders.sort(key=lambda x: len(x.parents), reverse=True)  # 階層が深い降順に並べる。
-	for folder in folders:  # 深い階層からから空フォルダを削除する。
+	for folder in folders:  # 深い階層から空フォルダを削除する。
 		if next(folder.iterdir(), None) is None:  # フォルダ内に子要素がない時。
 			folder.rmdir()  # フォルダを削除。	
 			print("The empty folder {} has been removed.".format(folder.name))
